@@ -43,7 +43,9 @@
        dos nuevas carpetas:pipes (filter.pipe.ts) y main pipe(main-pipe.module.ts) / se realiza un nuevo mapeo de la 
        bd asignada obteniendo un nuevo resultado de los datos, que se muestran en dos inputs en pantalla, en el archivo 
        filter.pipe se transforma la respuesta recibiendo exitosamente los datos. Se creo el modulo main.pipe para exportar 
-       el archivo filter.pipe para ser aplicado en el app.module.ts 
+       el archivo filter.pipe para ser aplicado en el app.module.ts, pdte de mostrar en pantalla mensajes de alerta, se realiza un alert en 
+       filter.pipe pero cuando se ejecuta se dispara y no muestra los resultados de la busqueda, se realiza la parte del ejercicio 4 de una lista para 
+       escoger la moneda en (COP USD EUR) en la vista de obtener-ruta, pdte de realizar la transformacion de la moneda a otra
 
     h) Ejercio 4 (#TODO)
 
