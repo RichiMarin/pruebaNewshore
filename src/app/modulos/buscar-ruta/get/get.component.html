@@ -1,0 +1,38 @@
+<h4>Listado Rutas</h4>
+<hr>
+
+<div class="row">
+    <div class="col">
+        
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>transport: </th>
+                    <th>origin: </th>
+                    <th>destination: </th>
+                    <th>price: </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vuelo of vuelos; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ vuelo.flightNumber }} {{ vuelo.flightCarrier }}</td>
+                    <td>{{ vuelo.origin }}</td>
+                    <td>{{ vuelo.destination}}</td>
+                    <td>{{ vuelo.price }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -3,14 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './assets/navbar/navbar.component';
+import { FooterComponent } from './assets/footer/footer.component';
+import { IndexComponent } from './assets/index/index.component';
+import { ErrorComponent } from './assets/error/error.component';
+import { HttpClientModule } from '@angular/common/http';
+// import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { MainPipeModule } from './main-pipe/main-pipe.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    IndexComponent,
+    ErrorComponent
+    // FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    MainPipeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

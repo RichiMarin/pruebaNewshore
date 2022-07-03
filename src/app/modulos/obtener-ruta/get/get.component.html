@@ -1,0 +1,98 @@
+<div class="container">
+    <h1>Busqueda de Salidas</h1>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text"
+                       class="form-control"
+                       placeholder="Search..."
+                       #txtSearch
+                       (keyup)="onSearchVuelos( txtSearch.value )">  
+                       <!-- name="filterPost"
+                       [(ngModel)]="filterPost"             -->
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div *ngIf="hayError"
+         class="alert alert-danger">
+        No se encontro busqueda establecida JFD
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Precio
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="1">COP</option>
+                            <option value="2">USD</option>
+                            <option value="3">EUR</option>
+                          </select>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let vuelosOrig of vuelosOrigen | filter:filterPost:search">
+                        <td>El vuelo desde {{ vuelosOrig.origin }} va con destino a {{ vuelosOrig.destination }}</td>
+                        <td>{{ vuelosOrig.destination }}</td>
+                        <td>Valor del ticket con Moneda seleccionada : {{ vuelosOrig.price | currency:"USD"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+    <h1>Busqueda de Arribos</h1>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text"
+                       class="form-control"
+                       placeholder="Search..."
+                       #txtSearch2
+                       (keyup)="onSearchVuelos2( txtSearch2.value )">  
+                       <!-- name="filterPost"
+                       [(ngModel)]="filterPost"             -->
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div *ngIf="hayError"
+         class="alert alert-danger">
+        No se encontro busqueda establecida JFD
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Destino</th>
+                        <th>Precio
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">COP</option>
+                                <option value="2">USD</option>
+                                <option value="3">EUR</option>
+                              </select>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let vuelosOrig of vuelosOrigen | filter:filterPost2:search2">
+                        <td>El Vuelo con destino a {{ vuelosOrig.origin }} llega de {{ vuelosOrig.destination  }}</td>
+                        <td>Valor del ticket con Moneda seleccionada : {{ vuelosOrig.price | currency:"USD"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</div>
+
+
