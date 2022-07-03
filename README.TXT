@@ -49,3 +49,10 @@
 
     h) Ejercio 4 (#TODO)
 
+    i) Se realiza el test copiando en el arhivo angular.json en la linea test : "codeCoverage": true,
+   
+       Se realiza un ng test con resultado 6 positivos de 7 mostrando un error el app.component.spec.ts
+       en la linea expect(compiled.querySelector('.content span')?.textContent).toContain('NewshoreAir app is running!');
+
+       error : "should render title"
+
