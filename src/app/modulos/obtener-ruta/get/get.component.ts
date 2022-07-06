@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Rutas,  } from 'src/app/modelos';
-import { Flight } from '../../../modelos/flight';
+import { Rutas,  } from 'src/app/models';
+import { Flight } from '../../../models/flight';
 import { ObtenerRutaService } from '../../../services/obtener-ruta.service';
-import { Vuelos } from '../../../modelos/rutas';
+import { Vuelos } from '../../../models/rutas';
+import { pipe } from 'rxjs';
 
 
 @Component({
@@ -15,6 +16,8 @@ export class GetComponent implements OnInit {
 
   constructor( private obtenerRutaService : ObtenerRutaService ) { }
 
+  //Creacion de variables
+
   filterPost = '';
   filterPost2 = '';
   public search: string = '';
@@ -23,6 +26,8 @@ export class GetComponent implements OnInit {
   hayError: boolean = false;
 
   ngOnInit(): void {
+
+    //Llamado del servicio obtener-ruta.service.ts
 
     this.hayError = false;
 
@@ -35,6 +40,7 @@ export class GetComponent implements OnInit {
 
   }
 
+  //Llamado de las funciones de filtrado por origen y destino
 
   onSearchVuelos( search: string ){
     this.search = search;
@@ -42,8 +48,10 @@ export class GetComponent implements OnInit {
   }
 
   onSearchVuelos2( search2: string ){
+    if(this.search2 !== this.search)
+    console.log('no son iguales');
     this.search2 = search2;
-    
+      
   }
 
 }

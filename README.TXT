@@ -56,3 +56,41 @@
 
        error : "should render title"
 
+   *************************************************************************************
+   
+   Observaciones 05 julio 2022
+
+   a) Se crean comentarios en la aplicacion
+
+   b) Se intenta modificar los datos de las carpetas que estan en español, no permite realizar el cambio
+
+   c) El componente moneda se trata de implementar en el componente obtener-ruta
+      la clase journey y transport: cuando se realiza la llamada a la bd la genera de la siguiente manera :
+
+      [
+    {
+        "departureStation": "MZL",
+        "arrivalStation": "MDE",
+        "flightCarrier": "CO",
+        "flightNumber": "8001",
+        "price": 200
+    },
+    {
+        "departureStation": "MZL",
+        "arrivalStation": "CTG",
+        "flightCarrier": "CO",
+        "flightNumber": "8002",
+        "price": 200
+    },
+    {
+        "departureStation": "PEI",
+        "arrivalStation": "BOG",
+        "flightCarrier": "CO",
+        "flightNumber": "8003",
+        "price": 200
+    }etc]
+
+    no encuentro la forma de llamar ambos modelos ya que el JSON que me resulta no obtiene estos resultados y solo me muestra lo descrito anteriormente
+
+    d ) se intenta implementar el metodo para filtrar por los dos input y que no coincidan
+

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GetComponent } from './get/get.component';
 
+//Enrutamiento componente
 
 const routes: Routes = [
   {

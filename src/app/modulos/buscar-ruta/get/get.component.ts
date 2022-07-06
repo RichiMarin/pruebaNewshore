@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Flight } from 'src/app/modelos';
+import { Flight } from 'src/app/models';
 import { BuscarRutaService } from 'src/app/services/buscar-ruta.service';
-import { Rutas } from '../../../modelos/rutas';
+import { Rutas } from '../../../models/rutas';
 
 
 
@@ -16,9 +16,11 @@ export class GetComponent implements OnInit {
   public vuelos: Flight[] = []
   
   constructor( private buscarrutaService: BuscarRutaService ) { }
-
  
   ngOnInit(): void {
+
+
+    //Llamada del servicio buscar-ruta service ts
 
     this.buscarrutaService.cargarVuelos()
       .subscribe( vuelos => {
@@ -29,15 +31,7 @@ export class GetComponent implements OnInit {
         
 
       });
-
-
-     
-    
-  }
-
-  
-    
-    
+    }
   }
    
 

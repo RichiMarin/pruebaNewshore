@@ -1,3 +1,7 @@
+<!-- //Html mostrar y filtrar datos de vuelos por destino y origen
+
+//Busqueda por Origen -->
+
 <div class="container">
     <h1>Busqueda de Salidas</h1>
     <div class="row">
@@ -16,6 +20,7 @@
     
     <hr>
 
+    <!-- //Mostrar mensaje de error en caso de que no se registre o encuentre informacion -->
     <div *ngIf="hayError"
          class="alert alert-danger">
         No se encontro busqueda establecida JFD
@@ -23,11 +28,14 @@
 
     <div class="row">
         <div class="col">
+            <!-- //Tabla contenido busqueda de salidas -->
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Origen</th>
-                        <th>Destino</th>
+                        <!-- <th>Destino</th> -->
+                        <!-- //Se emplea en el Precio una lista desplegable
+                        //mostrando tres opciones de moneda -->
                         <th>Precio
                         <select class="form-select" aria-label="Default select example">
                             <option value="1">COP</option>
@@ -38,15 +46,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- //filtro con respuesta de busqueda -->
                 <tr *ngFor="let vuelosOrig of vuelosOrigen | filter:filterPost:search">
                         <td>El vuelo desde {{ vuelosOrig.origin }} va con destino a {{ vuelosOrig.destination }}</td>
-                        <td>{{ vuelosOrig.destination }}</td>
+                        <!-- <td>{{ vuelosOrig.destination }}</td> -->
                         <td>Valor del ticket con Moneda seleccionada : {{ vuelosOrig.price | currency:"USD"}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div> 
+    <!-- //se emplean iguales caracteristicas anteriores en el Html buscando por destino -->
     <h1>Busqueda de Arribos</h1>
     <div class="row">
         <div class="col">

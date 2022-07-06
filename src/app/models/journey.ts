@@ -1,3 +1,5 @@
+//Creacion de la clase Journey
+
 import { Flight } from './flight';
 
 export class Journey{
